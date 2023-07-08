@@ -1,0 +1,1 @@
+Rails.application.config.session_store :cookie_store, key: '_posted_session', expire_after: 5.seconds

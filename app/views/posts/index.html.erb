@@ -1,0 +1,16 @@
+<h1>Posts#index</h1>
+
+<% if session[:posted] %>
+    <p>あなたは<%= session[:posted] %>を投稿しました。</p>
+<% else %>
+    <p>下の入力欄に入力して下さい</p>
+<% end %>
+
+<%= form_with model: @post, url: create_path do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit %>
+<% end %>
+
+<%= @posts.each do |p| %>
+    <p><%= p.title %></p>
+<% end %>
